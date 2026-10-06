@@ -1,0 +1,34 @@
+:root {
+  --bg: #15171c; --card: #1e2128; --line: #2b2f38;
+  --text: #e8eaed; --muted: #8b919c; --accent: #2f9e75; --bar: #2f9e7533;
+}
+* { box-sizing: border-box; }
+body { width: 380px; max-height: 580px; overflow-y: auto; margin: 0; padding: 14px; background: var(--bg); color: var(--text);
+  font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; }
+header { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px 14px; text-align: center; }
+.nav { display: flex; align-items: center; justify-content: space-between; }
+.nav button { background: none; border: 1px solid var(--line); color: var(--text); width: 28px; height: 28px; border-radius: 8px; font-size: 18px; line-height: 1; cursor: pointer; }
+.nav button:hover:not(:disabled) { background: var(--line); }
+.nav button:disabled { opacity: .3; cursor: default; }
+#label { font-weight: 600; }
+#total { font-size: 32px; font-weight: 700; color: var(--accent); margin-top: 6px; }
+.sub { color: var(--muted); font-size: 12px; }
+.chips { display: flex; gap: 8px; margin-top: 12px; }
+.chip { flex: 1; background: var(--bg); border-radius: 10px; padding: 6px 0; display: flex; flex-direction: column; }
+.chip b { font-size: 16px; } .chip span { color: var(--muted); font-size: 11px; }
+section { margin-top: 14px; }
+h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 6px; }
+.cols, .row { display: grid; grid-template-columns: 1fr 70px 46px 46px; gap: 6px; align-items: center; }
+.cols { color: var(--muted); font-size: 11px; padding: 0 8px 4px; }
+.cols span:not(:first-child), .row span:not(.name) { text-align: right; }
+.row { position: relative; padding: 7px 8px; border-radius: 8px; margin-bottom: 2px; overflow: hidden; }
+.row .bar { position: absolute; inset: 0 auto 0 0; background: var(--bar); z-index: 0; }
+.row > * { position: relative; z-index: 1; }
+.name { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.name em { font-style: normal; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.badge { flex: none; width: 20px; height: 20px; border-radius: 6px; background: var(--line); display: grid; place-items: center; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+#empty { text-align: center; color: var(--muted); padding: 14px 0; }
+.hist { display: flex; justify-content: space-between; width: 100%; background: var(--card); border: 1px solid var(--line); color: var(--text);
+  border-radius: 8px; padding: 7px 10px; margin-bottom: 4px; cursor: pointer; font: inherit; }
+.hist:hover, .hist.sel { border-color: var(--accent); }
+.hist span:last-child { color: var(--muted); }

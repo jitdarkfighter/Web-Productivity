@@ -1,0 +1,23 @@
+# Dependencies / build output
+node_modules/
+web-ext-artifacts/
+*.xpi
+*.zip
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment / secrets
+.env
+.env.*
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Claude Code local files
+.claude/

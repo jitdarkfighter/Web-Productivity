@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Web Wellbeing",
+  "version": "1.0.0",
+  "description": "Local-only daily browsing analytics: active time, visits and link clicks per domain.",
+  "browser_specific_settings": {
+    "gecko": { "id": "web-wellbeing@local", "strict_min_version": "115.0" }
+  },
+  "permissions": ["tabs", "webNavigation", "storage", "idle", "alarms"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": { "scripts": ["src/util.js", "src/store.js", "src/background.js"] },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["src/content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_title": "Web Wellbeing",
+    "default_popup": "popup/popup.html"
+  },
+  "icons": { "48": "icons/icon.svg", "96": "icons/icon.svg" }
+}
